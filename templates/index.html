@@ -1,1 +1,1051 @@
+<!doctype html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Image Processing Lab — Practical Portal</title>
+
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+  
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="brand-icon">✳</div>
+
+      <div>
+        <strong>Image Lab</strong>
+        <span>Practical Portal</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+
+      <div class="sidebar-title">MENU</div>
+
+      <button class="side-link active">
+        <span>▦</span>
+        Dashboard
+      </button>
+
+      <button class="side-link"
+              onclick="document.querySelector('.practical-section').scrollIntoView({behavior:'smooth'})">
+        <span>▣</span>
+        Practicals
+      </button>
+
+      <button class="side-link"
+              onclick="document.getElementById('workspace').scrollIntoView({behavior:'smooth'})">
+        <span>⚙</span>
+        Operations
+      </button>
+
+      <button class="side-link"
+              onclick="document.getElementById('results').scrollIntoView({behavior:'smooth'})">
+        <span>▤</span>
+        Results
+      </button>
+
+    </div>
+
+
+    <div class="sidebar-section">
+
+      <div class="sidebar-title">PRACTICALS</div>
+
+      <div class="mini-practical">
+        <span>01</span>
+        Image Basics
+      </div>
+
+      <div class="mini-practical">
+        <span>02</span>
+        Image Operations
+      </div>
+
+      <div class="mini-practical">
+        <span>03</span>
+        Transformations
+      </div>
+
+      <div class="mini-practical">
+        <span>04</span>
+        Enhancement
+      </div>
+
+      <div class="mini-practical">
+        <span>05</span>
+        Blur Filters
+      </div>
+
+    </div>
+
+
+    <!-- STUDENT -->
+
+    <div class="sidebar-student">
+
+      <div class="student-avatar">
+        SK
+      </div>
+
+      <div>
+        <strong>Shubham Kale</strong>
+        <span>CS25D023</span>
+      </div>
+
+    </div>
+
+  </aside>
+
+
+
+  <div class="main-area">
+
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+
+        <button class="menu-button">
+          ☰
+        </button>
+
+        <button class="create-btn">
+          + Create
+        </button>
+
+      </div>
+
+
+      <div class="search-box">
+
+        <span>⌕</span>
+
+        <input
+          type="text"
+          placeholder="Search practicals or operations..."
+        >
+
+      </div>
+
+
+      <div class="topbar-right">
+
+        <button class="top-icon">⛶</button>
+
+        <button class="top-icon">♢</button>
+
+        <div class="profile">
+
+          <div class="profile-avatar">
+            SK
+          </div>
+
+          <div class="profile-info">
+            <strong>Administrator</strong>
+            <span>Student</span>
+          </div>
+
+          <span>⌄</span>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    
+
+    <main class="dashboard-container">
+
+
+      <!-- PAGE TITLE -->
+
+      <section class="dashboard-heading">
+
+        <div>
+
+          <div class="eyebrow">
+            IMAGE PROCESSING LAB
+          </div>
+
+          <h1>
+            Practical Operations Portal
+          </h1>
+
+          <p>
+            Run image processing practicals directly in your browser
+            using Python and OpenCV.
+          </p>
+
+        </div>
+
+
+        <div class="student-summary">
+
+          <div>
+            <span>NAME</span>
+            <strong>Shubham Kale</strong>
+          </div>
+
+          <div>
+            <span>USN</span>
+            <strong>CS25D023</strong>
+          </div>
+
+          <div>
+            <span>YEAR</span>
+            <strong>3rd</strong>
+          </div>
+
+          <div>
+            <span>SEMESTER</span>
+            <strong>5th</strong>
+          </div>
+
+          <div>
+            <span>SECTION</span>
+            <strong>D</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="stats-grid">
+
+        <div class="stat-card dark-stat">
+
+          <div class="stat-top">
+            <span class="stat-badge">● Active</span>
+          </div>
+
+          <h3>
+            Image Processing Lab
+          </h3>
+
+          <p>
+            Complete practical operations using OpenCV.
+          </p>
+
+          <button
+            onclick="document.querySelector('.practical-section').scrollIntoView({behavior:'smooth'})"
+            class="stat-link">
+            View Practicals →
+          </button>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <span class="stat-label">
+            TOTAL PRACTICALS
+          </span>
+
+          <strong class="stat-number">
+            12
+          </strong>
+
+          <span class="stat-description">
+            9 Practicals + 3 Post Lab
+          </span>
+
+          <div class="stat-progress">
+            <span style="width: 90%;"></span>
+          </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <span class="stat-label">
+            TECHNOLOGY
+          </span>
+
+          <strong class="stat-number technology">
+            OpenCV
+          </strong>
+
+          <span class="stat-description">
+            Python + Flask + NumPy
+          </span>
+
+          <div class="tech-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section class="practical-section">
+
+
+        <div class="section-heading">
+
+          <div>
+
+            <h2>
+              Choose a Practical
+            </h2>
+
+            <p>
+              Select a practical to view available image processing
+              operations.
+            </p>
+
+          </div>
+
+
+          <div class="status" id="status">
+            Ready
+          </div>
+
+        </div>
+
+
+        <section class="practical-grid">
+
+          {% for pr in range(1,13) %}
+
+          <button
+            class="practical-btn {% if pr == 5 %}featured{% endif %}"
+            onclick="openPractical({{pr}})"
+            id="pr-btn-{{pr}}">
+
+            <span class="num">
+              {{ "%02d"|format(pr) }}
+            </span>
+
+            <span class="ptext">
+
+              <b>
+
+                {% if pr==1 %}
+                  Image Basics
+
+                {% elif pr==2 %}
+                  Image Operations
+
+                {% elif pr==3 %}
+                  Image Transformations
+
+                {% elif pr==4 %}
+                  Image Enhancement
+
+                {% elif pr==5 %}
+                  Blur Filters
+
+                {% elif pr==6 %}
+                  Image Restoration
+
+                {% elif pr==7 %}
+                  Image Compression
+
+                {% elif pr==8 %}
+                  Morphological Operations
+
+                {% elif pr==9 %}
+                  Template Matching
+
+                {% elif pr==10 %}
+                  Top-Hat Illumination
+
+                {% elif pr==11 %}
+                  Colour Spaces
+
+                {% else %}
+                  Edge Detection
+
+                {% endif %}
+
+              </b>
+
+              <small>
+
+                {% if pr >= 10 %}
+                  POST LAB
+                {% else %}
+                  Practical {{pr}}
+                {% endif %}
+
+              </small>
+
+            </span>
+
+            <span class="arrow">
+              →
+            </span>
+
+          </button>
+
+          {% endfor %}
+
+        </section>
+
+      </section>
+
+
+
+      <section
+        class="workspace"
+        id="workspace">
+
+
+        <!-- WORKSPACE HEADER -->
+
+        <div class="workspace-head">
+
+          <div>
+
+            <span class="eyebrow">
+              SELECTED PRACTICAL
+            </span>
+
+            <h2 id="workspace-title">
+              Choose a practical above
+            </h2>
+
+          </div>
+
+          <button
+            class="ghost"
+            onclick="clearWorkspace()">
+
+            Clear
+
+          </button>
+
+        </div>
+
+
+        <!-- OPERATION PANEL -->
+
+        <div
+          id="operation-panel"
+          class="hidden">
+
+
+          <div class="operation-layout">
+
+
+            <!-- OPERATIONS SIDEBAR -->
+
+            <aside class="ops">
+
+              <h3>
+                Operations
+              </h3>
+
+              <div id="operation-buttons"></div>
+
+            </aside>
+
+
+            <!-- OPERATION AREA -->
+
+            <section class="runner">
+
+
+              <!-- UPLOAD -->
+
+              <div class="upload-box">
+
+                <div class="upload-heading">
+
+                  <div class="upload-icon">
+                    ↑
+                  </div>
+
+                  <div>
+
+                    <h3 id="operation-title">
+                      Select an operation
+                    </h3>
+
+                    <p id="operation-help">
+                      The required upload fields will appear here.
+                    </p>
+
+                  </div>
+
+                </div>
+
+
+                <div id="upload-fields"></div>
+
+
+                <button
+                  class="run-btn"
+                  id="run-btn"
+                  onclick="runSelected()"
+                  disabled>
+
+                  ⚡ Run Operation
+
+                </button>
+
+              </div>
+
+
+              <!-- METRICS -->
+
+              <div id="metrics"></div>
+
+
+              <!-- RESULTS -->
+
+              <div
+                id="results"
+                class="results">
+              </div>
+
+
+            </section>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+      Image Processing Lab
+      • Python Flask
+      • OpenCV
+      • Practical Demonstration
+
+    </footer>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+const OPS = {{ ops|tojson }};
+
+let selectedPr = null;
+let selectedOp = null;
+
+
+
+function openPractical(pr) {
+
+  selectedPr = pr;
+  selectedOp = null;
+
+  document
+    .querySelectorAll('.practical-btn')
+    .forEach(b => b.classList.remove('active'));
+
+  document
+    .getElementById('pr-btn-' + pr)
+    .classList.add('active');
+
+
+  document
+    .getElementById('workspace-title')
+    .textContent =
+      `Practical ${pr} — ` +
+      document.querySelector(
+        '#pr-btn-' + pr + ' b'
+      ).textContent;
+
+
+  document
+    .getElementById('operation-panel')
+    .classList.remove('hidden');
+
+
+  document
+    .getElementById('results')
+    .innerHTML = '';
+
+
+  document
+    .getElementById('metrics')
+    .innerHTML = '';
+
+
+  renderOps();
+
+
+  document
+    .getElementById('workspace')
+    .scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+}
+
+
+
+function renderOps() {
+
+  const wrap =
+    document.getElementById(
+      'operation-buttons'
+    );
+
+  wrap.innerHTML = '';
+
+
+  OPS[selectedPr].forEach(
+    ([id, label, inputs]) => {
+
+      const b =
+        document.createElement('button');
+
+      b.className = 'op-btn';
+
+      b.textContent = label;
+
+
+      b.onclick = () =>
+        selectOperation(
+          id,
+          label,
+          inputs,
+          b
+        );
+
+
+      wrap.appendChild(b);
+
+    }
+  );
+
+}
+
+
+
+function selectOperation(
+  id,
+  label,
+  inputs,
+  button
+) {
+
+  selectedOp = {
+    id,
+    label,
+    inputs
+  };
+
+
+  document
+    .querySelectorAll('.op-btn')
+    .forEach(
+      b => b.classList.remove('selected')
+    );
+
+
+  button.classList.add('selected');
+
+
+  document
+    .getElementById('operation-title')
+    .textContent = label;
+
+
+  document
+    .getElementById('operation-help')
+    .textContent =
+
+    selectedPr === 6 &&
+    inputs.length === 1
+
+      ? 'Upload an image if you want to use your own input; otherwise a small demo image will be generated.'
+
+      : inputs.length === 1
+
+        ? 'Upload the image required by this operation.'
+
+        : 'Upload both images. For Practical 9, the template should be smaller than the input image.';
+
+
+  renderInputs(inputs);
+
+
+  document
+    .getElementById('run-btn')
+    .disabled = false;
+
+
+  document
+    .getElementById('results')
+    .innerHTML = '';
+
+
+  document
+    .getElementById('metrics')
+    .innerHTML = '';
+
+}
+
+
+function renderInputs(inputs) {
+
+  const box =
+    document.getElementById(
+      'upload-fields'
+    );
+
+  box.innerHTML = '';
+
+
+  inputs.forEach(
+    (key, i) => {
+
+      const label =
+        document.createElement('label');
+
+      label.className =
+        'file-field';
+
+
+      const title =
+        key === 'image'
+          ? 'Input Image'
+
+          : key === 'image1'
+            ? 'Image 1'
+
+            : key === 'image2'
+              ? 'Image 2'
+
+              : 'Template Image';
+
+
+      label.innerHTML = `
+        <span>${title}</span>
+        <input
+          type="file"
+          name="${key}"
+          accept="image/*"
+          onchange="showFileName(this)">
+      `;
+
+
+      box.appendChild(label);
+
+    }
+  );
+
+}
+
+
+
+function showFileName(input) {
+
+  const span =
+    input.parentElement
+      .querySelector('span');
+
+
+  if (input.files.length) {
+
+    span.textContent =
+      span.textContent.split(' —')[0]
+      + ' — '
+      + input.files[0].name;
+
+  }
+
+}
+
+
+async function runSelected() {
+
+  if (!selectedOp)
+    return;
+
+
+  const form =
+    new FormData();
+
+
+  document
+    .querySelectorAll(
+      '#upload-fields input'
+    )
+    .forEach(i => {
+
+      if (i.files[0])
+        form.append(
+          i.name,
+          i.files[0]
+        );
+
+    });
+
+
+  setStatus('Processing…');
+
+
+  document
+    .getElementById('run-btn')
+    .disabled = true;
+
+
+  try {
+
+    const res =
+      await fetch(
+        `/api/run/${selectedPr}/${selectedOp.id}`,
+        {
+          method: 'POST',
+          body: form
+        }
+      );
+
+
+    const data =
+      await res.json();
+
+
+    if (!data.ok)
+      throw new Error(
+        data.error
+      );
+
+
+    renderResults(data);
+
+
+    setStatus('Completed');
+
+
+  } catch(e) {
+
+    setStatus('Error');
+
+
+    document
+      .getElementById('results')
+      .innerHTML =
+        `<div class="error">
+          ${escapeHtml(e.message)}
+        </div>`;
+
+
+  } finally {
+
+    document
+      .getElementById('run-btn')
+      .disabled = false;
+
+  }
+
+}
+
+
+function renderResults(data) {
+
+  const results =
+    document.getElementById(
+      'results'
+    );
+
+
+  results.innerHTML = '';
+
+
+  data.cards.forEach(card => {
+
+    const div =
+      document.createElement(
+        'article'
+      );
+
+
+    div.className =
+      'result-card';
+
+
+    div.innerHTML = `
+      <h4>
+        ${escapeHtml(card.title)}
+      </h4>
+
+      <img
+        src="${card.image}"
+        alt="${escapeHtml(card.title)}">
+    `;
+
+
+    results.appendChild(div);
+
+  });
+
+
+  const info =
+    data.info;
+
+
+  if (
+    info &&
+    typeof info === 'object'
+  ) {
+
+    const m =
+      document.getElementById(
+        'metrics'
+      );
+
+
+    let rows = '';
+
+
+    Object.entries(info)
+      .forEach(([k, v]) => {
+
+        rows += `
+          <div>
+            <span>
+              ${escapeHtml(k)}
+            </span>
+
+            <strong>
+              ${
+                escapeHtml(
+                  Array.isArray(v)
+                    ? v.join(', ')
+                    : String(v)
+                )
+              }
+            </strong>
+          </div>
+        `;
+
+      });
+
+
+    m.innerHTML = `
+      <div class="metrics">
+        <h3>
+          Output / Analysis
+        </h3>
+
+        ${rows}
+
+      </div>
+    `;
+
+  }
+
+  else if (info) {
+
+    document
+      .getElementById('metrics')
+      .innerHTML =
+        `<div class="message">
+          ${escapeHtml(String(info))}
+        </div>`;
+
+  }
+
+}
+
+
+function setStatus(t) {
+
+  document
+    .getElementById('status')
+    .textContent = t;
+
+}
+
+
+
+function clearWorkspace() {
+
+  selectedPr = null;
+  selectedOp = null;
+
+
+  document
+    .querySelectorAll('.practical-btn')
+    .forEach(
+      b => b.classList.remove('active')
+    );
+
+
+  document
+    .getElementById('operation-panel')
+    .classList.add('hidden');
+
+
+  document
+    .getElementById('workspace-title')
+    .textContent =
+      'Choose a practical above';
+
+
+  document
+    .getElementById('results')
+    .innerHTML = '';
+
+
+  document
+    .getElementById('metrics')
+    .innerHTML = '';
+
+
+  setStatus('Ready');
+
+}
+
+
+
+function escapeHtml(s) {
+
+  return s.replace(
+    /[&<>"']/g,
+    m => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    }[m])
+  );
+
+}
+
+</script>
+
+</body>
+</html>
